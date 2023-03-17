@@ -26,7 +26,7 @@ function GetSolutionResult() {
                         dataField: "solutionStatusDisplay",
                         caption: "Solution Status",
                         width: "200px",
-                        sortOrder: "asc",
+                        sortOrder: "des",
                     }, {
                         dataField: "resultDate",
                         caption: "Result Date",
