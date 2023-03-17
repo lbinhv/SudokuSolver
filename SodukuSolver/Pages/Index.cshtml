@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>SUDOKU SOLVER</h1>
+
+    <div id="main">
+        <div id="row1">
+            <div id="box1" class="box"></div>
+            <div id="box2" class="box"></div>
+            <div id="box3" class="box"></div>
+        </div>
+        <div id="row2">
+            <div id="box4" class="box"></div>
+            <div id="box5" class="box"></div>
+            <div id="box6" class="box"></div>
+        </div>
+        <div id="row3">
+            <div id="box7" class="box"></div>
+            <div id="box8" class="box"></div>
+            <div id="box9" class="box"></div>
+        </div>
+    </div>
+
+    <button type="button" id="refersh" onclick="refersh()">Refersh</button>
+    <button type="button" id="solve" onclick="solve()">Solve</button>
+</div>
+@section Scripts{
+    <script src="/js/sudoku-solver.js"></script>
+}
