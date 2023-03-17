@@ -4,9 +4,9 @@ Sudoku Solver is a small website designed to display the Sudoku game.
 
 **The project have two main functions:**
 
-The first function is a Sudoku Solver webpage that displays a 9x9 matrix where users can enter numbers between 1 and 9. The page includes a "Solve" button. When the button is clicked, the program automatically computes the missing numbers. If the Sudoku puzzle is unsolvable, the system displays an error message.
+- The first function is a Sudoku Solver webpage that displays a 9x9 matrix where users can enter numbers between 1 and 9. The page includes a "Solve" button. When the button is clicked, the program automatically computes the missing numbers. If the Sudoku puzzle is unsolvable, the system displays an error message.
 
-The second function provides a webpage where users can check the result after clicking on the "Solve" button, displayed in a DxDataGrid."
+- The second function provides a webpage where users can check the result after clicking on the "Solve" button, displayed in a DxDataGrid."
 
 The solution has three parts:
 
