@@ -23,7 +23,7 @@ The solution has three parts:
 - **SudokuSolverApi**: This is the API endpoint that the website can contact to get or update data in the Database.
 
 
-************Prerequisites and Installing The Project:**
+# Prerequisites and Installing The Project:
 
 Before beginning, make sure you meet the following requirements:
 
@@ -50,7 +50,7 @@ Step 5: In Visual Studio, go to Tools -> NuGet Package Manager -> Package Manage
 Step 6: Click F5 to start project.
 
 
-************Using The Sudoku Solver:**
+# Using The Sudoku Solver:
 
 We have two main pages:
 
@@ -58,7 +58,7 @@ We have two main pages:
 
 **Solution Result Page**: Click on the 'Solution Result' on the header bar to go to the Solution Result page. On this page, you can see all the results in a DxDataGrid.
 
-************Contributing to SudokuSolver project**
+# Contributing to SudokuSolver project
 
 To contribute to SudokuSolver project, follow these steps:
 
