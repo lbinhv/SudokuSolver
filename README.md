@@ -1,8 +1,6 @@
 # Project name: SudokuSolver
 
-Sudoku Solver is a small website designed to display the Sudoku game. 
-The project has two main functions:
-
+Sudoku Solver is a small website designed to display the Sudoku game.
 
 **The project have two main functions:**
 
