@@ -39,10 +39,10 @@ Ex:
 
 Step 4: clean and rebuild the solution.
 
-Step 5: In Visual Studio, go to Tools -> NuGet Package Manager -> Package Manager Console. Then type 'update-database' and press Enter. Make sure to choose 'Library\SudokuSolver.DataAccess' as the default project. See the image below for more details.
+Step 5: In Visual Studio, go to Tools -> NuGet Package Manager -> Package Manager Console. Then type 'update-database' and press Enter. Make sure to choose 'Library\SudokuSolverApi' as the default project. See the image below for more details.
 
 
-![image](https://user-images.githubusercontent.com/11987904/225953857-81f796b5-da44-4c68-9350-f72f0d9e6dc2.png)
+![image](https://user-images.githubusercontent.com/11987904/225974915-8e553870-bbee-4977-a0a7-9dcf7cad286a.png)
 
 
 Step 6: Click F5 to start project.
