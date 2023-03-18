@@ -1,6 +1,6 @@
 # Version: 1.0
 
-# Project name: SudokuSolver
+# Project name: Sudoku Solver
 
 Sudoku Solver is a small website designed to display the Sudoku game.
 
