@@ -44,19 +44,19 @@ namespace SudokuSolverApi.Controllers
 
         [HttpPost]
         [Route("/AddSolutionResult")]
-        public IActionResult Post([FromBody] bool isSuccess)
+        public IActionResult Post([FromBody] bool result)
         {
             try
             {
                 var solutionResultDto = new SolutionResultDto
                 {
-                    SolutionStatus = isSuccess ? (int)SolutionStatusEnum.Success : (int)SolutionStatusEnum.Failure,
+                    SolutionStatus = result ? (int)SolutionStatusEnum.Success : (int)SolutionStatusEnum.Failure,
                     IsDeleted = false,
                     SolutionDate = DateTime.UtcNow,
                 };
                 _addSolutionResultUseCase.Execute(solutionResultDto);
 
-                return Ok();
+                return Ok(new { message = "Data saved successfully!" });
             }
             catch (Exception ex)
             {

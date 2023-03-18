@@ -1,7 +1,18 @@
 count = 0
-for (var i = 0; i < 9; i++) {
-    count = 9 * i;
-    document.getElementsByClassName("box")[i].innerHTML = "<div class='cell'><input type='text' id='" + (count + 1) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 2) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 3) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 4) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 5) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 6) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 7) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 8) + "' class='input'></div><div class='cell'><input type='text' id='" + (count + 9) + "' class='input'></div>"
+const BOARD_SIZE = 9;
+var board_cell = '';
+var default_cell = "<div class='cell'><input type='number' min='1' max ='9' id='@@cell-id' class='input'></div>";
+
+for (var i = 0; i < BOARD_SIZE; i++) {
+    count = BOARD_SIZE * i;
+
+    for (var j = 1; j < BOARD_SIZE + 1; j++) {
+        board_cell += default_cell.replace('@@cell-id', count + j);
+    }
+    document.getElementsByClassName("box")[i].innerHTML = board_cell;
+
+    //reset value
+    board_cell = '';
 }
 
 var choosen;
@@ -18,13 +29,12 @@ function start() {
     for (var i = 0; i < 81; i++) {
         if (hard_board[hard_random][i] != '-') {
             document.getElementById((i + 1).toString()).value = hard_board[hard_random][i];
-            document.getElementById((i + 1).toString()).readOnly = true;
         }
     }
 }
 
 //Solve
-function solve() {
+async function solve() {
     var curentValue = "";
     var isSuccess = true;
     for (var i = 0; i < 81; i++) {
@@ -35,13 +45,12 @@ function solve() {
         }
         else { document.getElementById((i + 1).toString()).value = hard[choosen][i]; }
     }
+
+    if (!isSuccess) 
+        toastr.error("The system cannot resolve the sudoku game.");
+        
+    //Save result to Database
     SaveResult(isSuccess);
-    if (!isSuccess) {
-        toastr.error("Cannot Resolve");
-    }
-    else {
-        toastr.success('Success messages');
-    }
 }
 
 //new game
@@ -63,16 +72,25 @@ function SaveResult(isSuccess) {
 
     fetch('http://localhost:5058/AddSolutionResult', {
         method: 'POST',
-        body: isSuccess,
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify(isSuccess),
     })
-        .then(response => response.json())
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            }
+            else {
+                toastr.error("Error save result data.");
+            }
+        })
         .then(data => {
-            console.log('Data saved successfully!');
+            toastr.success(data.message);
+            return true;
         })
         .catch(error => {
-            console.error(error);
+            toastr.error(error);
+            return false;
         });
 }
