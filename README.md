@@ -39,7 +39,10 @@ Ex:
 ![image](https://user-images.githubusercontent.com/11987904/225954679-3dedbb0b-447a-46db-b74c-90740f9fdc91.png)
 
 
-Step 4: clean and rebuild the solution.
+Step 4: Right-click on the solution and select 'Restore NuGet Packages.' After that, clean and rebuild the solution. For more details, please refer to the image below.
+
+![image](https://user-images.githubusercontent.com/11987904/226093796-ddbf49c8-26ca-4c0a-8388-b4b2eeab650b.png)
+
 
 Step 5: In Visual Studio, go to Tools -> NuGet Package Manager -> Package Manager Console. Then type 'update-database' and press Enter. Make sure to choose 'Library\SudokuSolverApi' as the default project. See the image below for more details.
 
